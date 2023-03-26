@@ -18,9 +18,10 @@ var Books = []Book{}
 
 func IndexBook(ctx *gin.Context) {
 	if len(Books) == 0 {
-		ctx.AbortWithStatusJSON(http.StatusNotFound, gin.H{
-			"status":  "Not Found",
-			"message": "Data tidak tersedia",
+		ctx.AbortWithStatusJSON(http.StatusOK, gin.H{
+			"status": "No content",
+			"message": "Data not found",
+			"data": nil,
 		})
 		return
 	}
